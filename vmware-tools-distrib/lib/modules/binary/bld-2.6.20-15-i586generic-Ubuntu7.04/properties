@@ -1,0 +1,7 @@
+UtsRelease 2.6.20-15-generic
+UtsVersion #2 SMP Sun Apr 15 07:36:31 UTC 2007
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Ubuntu7.04, 2.6.20-15, i586, generic

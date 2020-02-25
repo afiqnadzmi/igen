@@ -1,0 +1,7 @@
+UtsRelease 2.6.26-2-686
+UtsVersion #1 SMP Thu Mar 26 01:08:11 UTC 2009
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Debian5.0, 2.6.26-2-686, i686

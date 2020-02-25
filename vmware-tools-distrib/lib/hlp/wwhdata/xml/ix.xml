@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebWorksHelpIX version="5.0" xmlns="urn:WebWorks-Help-Index-Schema">
+  <g t="A" o="002">
+    <i t="About tab">
+      <j l="14" />
+    </i>
+    <i t="audio adapters">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+    <i t="audio drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+  </g>
+  <g t="B" o="002">
+    <i t="backup applications">
+      <i t="drivers for">
+        <j l="3" />
+      </i>
+    </i>
+    <i t="build number for VMware Tools">
+      <j l="14" />
+    </i>
+    <i t="BusLogic SCSI adapters">
+      <j l="3" />
+    </i>
+    <i t="buttons in the help window">
+      <j l="0" />
+    </i>
+  </g>
+  <g t="C" o="002">
+    <i t="CD-ROM drives">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+    <i t="clock">
+      <i t="synchronization between host and guest">
+        <j l="7" />
+      </i>
+    </i>
+    <i t="copy and paste">
+      <i t="of files and text">
+        <j l="4" />
+      </i>
+    </i>
+    <i t="copyright information for VMware Tools">
+      <j l="14" />
+    </i>
+    <i t="custom scripts">
+      <j l="10" />
+    </i>
+    <i t="custom VMware Tools scripts">
+      <j l="10" />
+    </i>
+  </g>
+  <g t="D" o="002">
+    <i t="device command">
+      <j l="9" />
+    </i>
+    <i t="device drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+    <i t="disk command">
+      <j l="13" />
+    </i>
+    <i t="drag and drop">
+      <i t="of files and text">
+        <j l="4" />
+      </i>
+    </i>
+    <i t="drivers">
+      <i t="VMware Tools">
+        <j l="3" />
+      </i>
+    </i>
+    <i t="DVD drives">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+  </g>
+  <g t="F" o="002">
+    <i t="Filesystem Sync drivers">
+      <j l="3" />
+    </i>
+    <i t="floppy drives">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+  </g>
+  <g t="H" o="002">
+    <i t="help system">
+      <j l="0" />
+    </i>
+    <i t="hgfs.sys kernel module">
+      <j l="3" />
+    </i>
+  </g>
+  <g t="I" o="002">
+    <i t="ISO images">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+  </g>
+  <g t="L" o="002">
+    <i t="LSI Logic adapters">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+  </g>
+  <g t="M" o="002">
+    <i t="memory control drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+    <i t="mouse drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+  </g>
+  <g t="N" o="002">
+    <i t="network adapters">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+    <i t="network drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+  </g>
+  <g t="O" o="002">
+    <i t="Options tab">
+      <j l="6" />
+    </i>
+  </g>
+  <g t="P" o="002">
+    <i t="paravirtual SCSI drivers">
+      <j l="3" />
+    </i>
+    <i t="poweroff-vm-default script">
+      <j l="11" />
+    </i>
+    <i t="poweron-vm-default script">
+      <j l="11" />
+    </i>
+    <i t="processes">
+      <i t="VMware user">
+        <j l="4" />
+      </i>
+    </i>
+  </g>
+  <g t="R" o="002">
+    <i t="removable devices">
+      <j l="9" />
+    </i>
+    <i t="resume-vm-default script">
+      <j l="11" />
+    </i>
+  </g>
+  <g t="S" o="002">
+    <i t="script command">
+      <j l="10" />
+    </i>
+    <i t="scripts">
+      <i t="VMware Tools">
+        <j l="11" />
+      </i>
+    </i>
+    <i t="scripts, VMware Tools">
+      <j l="10" />
+    </i>
+    <i t="SCSI drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+    <i t="service">
+      <i t="VMware Tools">
+        <j l="2" />
+      </i>
+    </i>
+    <i t="shared folders">
+      <i t="kernel module for">
+        <j l="3" />
+      </i>
+    </i>
+    <i t="shrinking a virtual disk">
+      <j l="13" />
+    </i>
+    <i t="sound adapters">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+    <i t="status icon">
+      <i t="VMware Tools">
+        <j l="8" />
+      </i>
+    </i>
+    <i t="suspend-vm-default script">
+      <j l="11" />
+    </i>
+    <i t="SVGA drivers">
+      <i t="virtual">
+        <j l="3" />
+      </i>
+    </i>
+  </g>
+  <g t="T" o="002">
+    <i t="time synchronization">
+      <j l="7" />
+    </i>
+    <i t="timesync command">
+      <j l="7" />
+    </i>
+    <i t="toolbox UI">
+      <j l="5" />
+    </i>
+  </g>
+  <g t="U" o="002">
+    <i t="Unity feature">
+      <j l="4" />
+    </i>
+    <i t="USB devices">
+      <i t="connecting">
+        <j l="9" />
+      </i>
+    </i>
+    <i t="user process">
+      <i t="VMware">
+        <j l="4" />
+      </i>
+    </i>
+  </g>
+  <g t="V" o="002">
+    <i t="version of VMware Tools">
+      <j l="14" />
+    </i>
+    <i t="virtual disks">
+      <i t="shrinking">
+        <j l="13" />
+      </i>
+    </i>
+    <i t="VMCI drivers">
+      <j l="3" />
+    </i>
+    <i t="vmhgfs kernel module">
+      <j l="3" />
+    </i>
+    <i t="vmtoolsd">
+      <j l="2" />
+    </i>
+    <i t="VMware Tools">
+      <i t="components of">
+        <j l="1" />
+      </i>
+      <i t="control panel">
+        <j l="5" />
+      </i>
+    </i>
+    <i t="VMware Tools icon">
+      <j l="8" />
+    </i>
+    <i t="VMware Tools scripts">
+      <i t="custom">
+        <j l="10" />
+      </i>
+      <i t="default">
+        <j l="11" />
+      </i>
+      <i t="disabling">
+        <j l="12" />
+      </i>
+    </i>
+    <i t="VMware Tools service">
+      <j l="2" />
+    </i>
+    <i t="VMware user process">
+      <j l="4" />
+    </i>
+    <i t="vmxnet networking drivers">
+      <j l="3" />
+    </i>
+    <i t="Volume Shadow Copy Services drivers">
+      <j l="3" />
+    </i>
+  </g>
+</WebWorksHelpIX>

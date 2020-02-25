@@ -1,0 +1,7 @@
+UtsRelease 2.6.20-15-server
+UtsVersion #2 SMP Sun Apr 15 06:22:36 UTC 2007
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment Ubuntu7.04, 2.6.20-15, amd64, server

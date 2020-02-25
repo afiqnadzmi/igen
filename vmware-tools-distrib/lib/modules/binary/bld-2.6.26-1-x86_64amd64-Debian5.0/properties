@@ -1,0 +1,7 @@
+UtsRelease 2.6.26-1-amd64
+UtsVersion #1 SMP Sat Jan 10 17:57:00 UTC 2009
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment Debian5.0, 2.6.26-1-amd64, amd64

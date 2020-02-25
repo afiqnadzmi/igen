@@ -1,0 +1,401 @@
+ <div id="viewProfileTabs">
+                <table>
+                    <tr><?php if ($_GET['type'] != 'salary') {
+                                
+                            } ?>
+                        <td id="personal" onclick="personal()" <?php if (isset($_GET['t']) == false) { ?> style="color:orchid" <?php } ?> >PERSONAL INFORMATION</td>
+                        <td id="salary" onclick="salary()">SALARY</td>
+                        <td id="ttable" onclick="tt()"><!--TIME TABLE --></td> 
+                        <td id="record" onclick="record()">RECORD</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--Personal Information-->
+            <div class="viewProfileInfo">
+                <?php if (isset($_GET['t']) == false) { ?>
+                    <div id="pi" style="padding-top:20px;">
+                        <?php
+                    } else {
+                        echo '<div id="pi" style="padding-top:20px;display: none">';
+                    }
+                    ?>
+                    <div id="editModePI">
+                        <table class="titleBart">
+                            <tr>
+                                <td style="font-size:large;font-weight: bold;">
+                                    &nbsp;&nbsp;&nbsp;Personal Information
+                                </td>
+								<td onclick="editProfile()" id="editBut" style="width: 80px;">Edit</td>
+                            </tr>
+                        </table>
+                        <div style="overflow:auto;width:94%;min-height: 500px;padding-top:20px;padding-left:20px;">
+						<fieldset style="width:35%;padding-left: 50px;height:420px;  border:1px solid silver">
+                            <table>
+							 
+                              <legend style="font-size: 14px; ">&nbsp;&nbsp;  Personal Detail &nbsp;&nbsp;</legend>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Username</td>
+                                    <td style="padding-top:5px;"><?php print $row['username']; ?></td>
+                                </tr>
+                                <tr style="display: none;">
+                                    <td style="padding-top:5px;width:200px;">Profile</td>
+                                    <td style="padding-top:5px"><?php print $row['profile']; ?></td>
+                                </tr>
+                               
+								
+				<?php  
+	
+				
+				if($row['country']=="Malaysia"){
+				?>
+                 <tr>
+                                    <td style="padding-top:5px;width:200px;">IC</td>
+                                    <td style="padding-top:5px"><?php print $row['ic']; ?></td>
+                  </tr>
+				
+				<?php
+				}else{
+				?>
+				<tr>
+                    <td style="padding-top:5px;width:200px;">Passport Number</td>
+                    <td style="padding-top:5px;color:<?php print $fontColorIc ?>;"><?php print $row['passport']; ?></td>
+                </tr>
+				<tr>
+                    <td style="padding-top:5px;width:200px;">Passport Expiry</td>
+                    <td style="padding-top:5px;color:<?php print $fontColorpe ?>;"><?php print date("d-m-Y", strtotime($row['passport_expiry'])); ?></td>
+                </tr>
+				<tr>
+                    <td style="padding-top:5px;width:200px;">Work Permit</td>
+                    <td style="padding-top:5px;color:<?php print $fontColorwp ?>;"><?php print $row['work_permit']; ?></td>
+                </tr>
+			
+				<?php
+				
+				}
+				?>
+				
+				    <tr>
+                                    <td style="padding-top:5px;width:200px;">Date of Birth</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        $dateOfDay = date("Y-m-d");
+                                        $dateOfBirth = $row['dob'];
+
+                                        $yearOfDay = substr($dateOfDay, 0, 4);
+                                        $yearOfBirth = substr($dateOfBirth, 0, 4);
+                                        $age = $yearOfDay - $yearOfBirth;
+                                        $realAge = abs($age);
+
+                                        if ($realAge >= 55) {
+                                            echo date("d-m-Y",strtotime($row['dob'])) . ' (Category 2)';
+                                        } else {
+                                            echo date("d-m-Y",strtotime($row['dob'])) . ' (under 55)';
+                                        }
+                                        ?>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Contact Number (Home)</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['phone'] != "") {
+                                            print $row['phone'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Contact Number (Mobile)</td>
+                                    <td style="padding-top:5px"><?php print $row['mobile']; ?></td>
+                                </tr>
+								
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Email</td>
+                                    <td style="padding-top:5px"><?php print $row['email']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Address</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['address'] != "") {
+                                            print $row['address'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Gender</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['gender'] == 'F') {
+                                            echo 'Female';
+                                        } else if ($row['gender'] == 'M') {
+                                            echo 'Male';
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px">Race</td>
+                                    <td style="padding-top:5px;"><?php echo $row['race'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px">Religion</td>
+                                    <td style="padding-top:5px;"><?php echo $row['religion'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px">Marital Status</td>
+                                    <td style="padding-top:5px;">
+                                        <?php
+                                        if ($row['marital'] == 'M') {
+                                            echo 'Married';
+                                        } else if ($row['marital'] == 'D') {
+                                            echo 'Divorced';
+                                        } else if ($row['marital'] == 'S') {
+                                            echo 'Single';
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+								<tr>
+								    <?php
+                                        if ($row['spouse_name'] !="") {
+										?>
+                                    <td style="padding-top:5px;width:200px">Spouse Name</td>
+                                    <td style="padding-top:5px;">
+                                       <?php
+                                            echo $row['spouse_name'];
+                                      
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Spouse Working</td>
+                                    <td style="padding-top:5px;">
+                                        <?php
+                                        if ($row['spouse_work'] == 'N') {
+                                            echo 'No';
+                                        } else if ($row['spouse_work'] == 'Y') {
+                                            echo 'Yes';
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Number of Children</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['num_of_kids'] == 0) {
+                                            echo "-";
+                                        } else {
+                                            print $row['num_of_kids'];
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                               
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Join Date</td>
+                                    <td style="padding-top:5px"><?php print date("d-m-Y",strtotime($row['join_date'])); ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px">Resign Date</td>
+                                    <td style="padding-top:5px;"><?php
+                                    if ($row['resign_date'] != "0000-00-00" && $row['resign_date'] != "") {
+                                        print date("d-m-Y",strtotime($row['resign_date']));
+                                    } else {
+                                        print "-";
+                                    }
+                                        ?></td> 
+                                </tr></table>
+								 </fieldset>
+                                  	<fieldset style="width:35%;padding-left: 50px;height:100px; margin-top:20px;  border:1px solid silver">
+                            <table>
+							 
+                              <legend style="font-size: 14px; ">&nbsp;&nbsp;  Next of kin &nbsp;&nbsp;</legend>
+								<tr>
+                                    <td style="padding-top:5px;width:200px;">Emergency Contact Person</td>
+                                    <td style="padding-top:5px"><?php print $row['contact_person']; ?></td>
+                                </tr>
+								<tr>
+                                    <td style="padding-top:5px;width:200px;">Emergency Contact Number</td>
+                                    <td style="padding-top:5px"><?php print $row['emergency']; ?></td>
+                                </tr>
+								<tr>
+                                    <td style="padding-top:5px;width:200px;">Relationship</td>
+                                    <td style="padding-top:5px">Sister</td>
+                                </tr>
+                                <tr style="display: none;">
+                                    <td style="padding-top:6px;width:200px">Extra Information/Note</td>
+                                    <td style="padding-top:6px;"><?php print $row['notes']; ?></td>
+                                </tr>
+                                <tr style="display: none;">
+                                    <td style="padding-top:6px;width:200px">Extra Information/Note</td>
+                                    <td style="padding-top:6px;"><?php print $row['notes']; ?></td>
+                                </tr>
+                                <?php
+                                $sql1 = 'SELECT field_name, field_value FROM employee_info WHERE emp_id=' . $getID;
+                                $query1 = mysql_query($sql1);
+                                while ($row1 = mysql_fetch_array($query1)) {
+                                    echo '<tr><td style="padding-top:5px;width:200px;">' . $row1["field_name"] . '</td><td style="padding-top:5px;">' . $row1["field_value"] . '</td></tr>';
+                                }
+                                ?>
+                            </table> </fieldset>
+                        </div>
+                    </div>
+					
+                </div>
+				
+			
+                <?php if ($_GET['t'] != 's') { ?>
+                    <div id="sal" style="display:none; padding-top:20px;">
+                        <?php
+                    } else {
+                        echo '<div id="sal" style="padding-top:20px;">';
+                    }
+                    ?>
+					
+                    <div id="editModeSAL">
+                        <table id="titleBar" class="titleBarTo">
+                            <tr>
+                                <td style="font-size:large;font-weight: bold;">
+                                    &nbsp;&nbsp;&nbsp;Salary
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="overflow:auto;width:94%;min-height: 500px;padding-top:20px;padding-left:20px;">
+                            <table>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Under Contract</td>
+                                    <td style="padding-top:5px;">
+                                        <?php
+                                        if ($row['is_contract'] == 'N') {
+                                            echo 'No';
+                                        } else if ($row['is_contract'] == 'Y') {
+                                            echo 'Yes';
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Salary Type</td>
+                                    <td style="padding-top:5px">  
+                                        <?php
+                                        if ($row['salary_type'] == "bs") {
+                                            echo "Basic Salary";
+                                        } elseif ($row['salary_type'] == "mn") {
+                                            echo "Monthly";
+                                        } elseif ($row['salary_type'] == "wk") {
+                                            echo "Weekly";
+                                        } elseif ($row['salary_type'] == "dy") {
+                                            echo "Daily";
+                                        } elseif ($row['salary_type'] == "hr") {
+                                            echo "Hourly";
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Salary Amount</td>
+                                    <td style="padding-top:5px"><input type="hidden" id="textsalary" /><?php print $row['salary']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Bank Type</td>
+                                    <td style="padding-top:5px;">
+                                        <?php
+                                        if ($rowJoin['bank_acc_id'] != 0) {
+                                            echo $rowJoin['name'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:6px;width:200px">Bank Account Number</td>
+                                    <td style="padding-top:6px;">
+                                        <?php
+                                        if ($row['bank_acc_num'] != "") {
+                                            print $row['bank_acc_num'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">EPF Number</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['epf_num'] != "") {
+                                            print $row['epf_num'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Socso Number</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['socso_num'] != "") {
+                                            print $row['socso_num'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Income Tax Number</td>
+                                    <td style="padding-top:5px">
+                                        <?php
+                                        if ($row['income_tax_num'] != "") {
+                                            print $row['income_tax_num'];
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:5px;width:200px;">Zakat</td>
+                                    <td style="padding-top:5px;color:<?php echo $fontColorZakat ?>">
+                                        <?php
+                                        if ($row["zakat"] == "" || $row["zakat"] == 0) {
+                                            echo "-";
+                                        } else {
+                                            print $row['zakat'];
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:6px;">Salary History</td>
+                                    <td style="padding-top:6px;"><a class="blue" onclick="salaryhistory()">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:6px;">Payslip History</td>
+                                    <td style="padding-top:6px;"><a class="blue" onclick="paysliphistory()">View</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+				</div>
+				</div>
+				</div>

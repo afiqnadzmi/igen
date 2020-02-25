@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebWorksHelpTOC version="5.0" xmlns="urn:WebWorks-Help-TOC-Schema">
+  <i t="About VMware Tools Help" l="0" />
+  <i t="Components of VMware Tools" l="1">
+    <i t="VMware Tools Service" l="2" />
+    <i t="VMware Tools Device Drivers" l="3" />
+    <i t="VMware User Process" l="4" />
+  </i>
+  <i t="VMware Tools Control Panel" l="5">
+    <i t="Setting VMware Tools Options" l="6">
+      <i t="Configure Time Synchronization Between Guest and Host" l="7" />
+      <i t="Show a VMware Tools Icon in a Windows Taskbar" l="8" />
+    </i>
+    <i t="Connect or Disconnect a Virtual Device" l="9" />
+    <i t="Use Custom VMware Tools Scripts" l="10">
+      <i t="Default VMware Tools Scripts" l="11" />
+      <i t="Disable a VMware Tools Script" l="12" />
+    </i>
+    <i t="Shrink a Virtual Disk" l="13" />
+    <i t="Information on the About Tab" l="14" />
+  </i>
+</WebWorksHelpTOC>

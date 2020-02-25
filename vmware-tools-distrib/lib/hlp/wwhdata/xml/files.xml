@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebWorksHelpBook version="5.0" name="VMware Tools Help" context="vm_tools" locale="en" xmlns="urn:WebWorks-Help-Book-Files-Schema">
+  <CommonWordsToSkip minlen="3">
+    a about after all also am an and another any are as at
+    be because been before being between both but by
+    came can come copyright corp corporation could
+    did do does
+    each etc
+    for from
+    get goes got
+    had has have he her here him himself his how
+    if in inc into is it its
+    let like
+    make many me might more most much must my
+    never nor not now
+    of off on one only or other our out over own
+    reserved rights
+    said same see set shall she should since so some still such
+    take than that the their them then there these they this those though through to too
+    under us use
+    very
+    was way we well were what when where which while who why will with would
+    yes yet you your
+   </CommonWordsToSkip>
+  <ScoringPrefs>
+    <meta name="keywords" weight="100" />
+    <meta name="description" weight="50" />
+    <meta name="summary" weight="50" />
+    <title weight="20" />
+    <h1 weight="15" />
+    <h2 weight="10" />
+    <caption weight="10" />
+    <h3 weight="7" />
+    <th weight="5" />
+    <h4 weight="5" />
+    <h5 weight="4" />
+    <h6 weight="3" />
+    <h7 weight="2" />
+  </ScoringPrefs>
+  <DocumentInfo>
+    <Document title="About VMware Tools Help" href="GUID-14D1E2BE-8CE5-411A-A02C-B00A6940FBAD.html" />
+    <Document title="Components of VMware Tools" href="GUID-151025AE-6641-428B-9818-5E06916543F3.html" />
+    <Document title="VMware Tools Service" href="GUID-0BD592B1-A300-4C09-808A-BB447FAE2C2A.html" />
+    <Document title="VMware Tools Device Drivers" href="GUID-6994A5F9-B62B-4BF1-99D8-E325874A4C7A.html" />
+    <Document title="VMware User Process" href="GUID-FB7FA658-7622-4680-BD9F-7A6670C12794.html" />
+    <Document title="VMware Tools Control Panel" href="GUID-A113A508-788B-4871-86A4-0D8C987FE4D9.html" />
+    <Document title="Setting VMware Tools Options" href="GUID-7F59A4E0-2B6D-4430-9C25-B6F17C4DE510.html" />
+    <Document title="Configure Time Synchronization Between Guest and Host" href="GUID-35D8817F-5193-4315-AAF9-575CBDEE1B8F.html" />
+    <Document title="Show a VMware Tools Icon in a Windows Taskbar" href="GUID-87CDBAF9-171C-4CA2-973E-A3EC03A38C71.html" />
+    <Document title="Connect or Disconnect a Virtual Device" href="GUID-F8FE08FF-BCE2-4796-8B85-41A31070073A.html" />
+    <Document title="Use Custom VMware Tools Scripts" href="GUID-2D52EA83-C33F-47FA-9C6E-9E6443EA0CB2.html" />
+    <Document title="Default VMware Tools Scripts" href="GUID-A024460D-28A4-4541-B6BB-CFA1A31D9CE9.html" />
+    <Document title="Disable a VMware Tools Script" href="GUID-DE30092C-D613-4978-A68B-C0642B828909.html" />
+    <Document title="Shrink a Virtual Disk" href="GUID-20195825-7E66-4106-B3E6-74001DF94A09.html" />
+    <Document title="Information on the About Tab" href="GUID-7F9CD622-B66C-40D4-82D4-50FF23BD36EE.html" />
+  </DocumentInfo>
+  <TopicMap>
+    <Topic name="IDH_OPTIONS" href="GUID-7F59A4E0-2B6D-4430-9C25-B6F17C4DE510.html#1_8_6_1" />
+    <Topic name="IDH_DEVICES" href="GUID-F8FE08FF-BCE2-4796-8B85-41A31070073A.html#1_8_7_1" />
+    <Topic name="IDH_SCRIPTS" href="GUID-2D52EA83-C33F-47FA-9C6E-9E6443EA0CB2.html#1_8_8_1" />
+    <Topic name="IDH_SHRINK" href="GUID-20195825-7E66-4106-B3E6-74001DF94A09.html#1_8_9_1" />
+    <Topic name="IDH_ABOUT" href="GUID-7F9CD622-B66C-40D4-82D4-50FF23BD36EE.html#1_8_10_1" />
+  </TopicMap>
+</WebWorksHelpBook>

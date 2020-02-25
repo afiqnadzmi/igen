@@ -1,0 +1,7 @@
+UtsRelease 2.6.22-14-server
+UtsVersion #2 SMP Sun Oct 14 23:29:36 UTC 2007
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment Ubuntu7.10, 2.6.22-14, amd64, server

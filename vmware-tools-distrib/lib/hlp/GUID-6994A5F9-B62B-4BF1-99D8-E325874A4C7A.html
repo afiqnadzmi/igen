@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- saved from url=(0014)about:internet -->
+    <meta name="keywords" content="VMware Tools,VMware Tools,VMCI drivers,backup applications,drivers for,Filesystem Sync drivers,Volume Shadow Copy Services drivers,memory control drivers,virtual,shared folders,kernel module for,vmhgfs kernel module,hgfs.sys kernel module,audio drivers,virtual,mouse drivers,virtual,network drivers,virtual,vmxnet networking drivers,LSI Logic adapters,virtual,BusLogic SCSI adapters,paravirtual SCSI drivers,device drivers,virtual,SCSI drivers,virtual,SVGA drivers,virtual,drivers,VMware Tools" />
+    <title>VMware Tools Device Drivers</title>
+    <link rel="StyleSheet" href="css/GUID-0FB09365-74C8-4874-8DCF-9F3719AB8796.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body class="" style="" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" summary="">
+      <tr>
+        <td style="text-align: left; font-family: sans-serif; font-size: 12px"></td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">VMware Tools Help : <a class="WebWorks_Breadcrumb_Link" href="GUID-151025AE-6641-428B-9818-5E06916543F3.html#1_6_7_1">Components of VMware Tools</a> : VMware Tools Device Drivers</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="1_6_7_1">VMware Tools Device Drivers</a></div>
+      <div class="Short_Description"><a name="1_6_7_3">Device drivers smooth mouse operations, make VMware features such as folder sharing available, and improve sound, graphics, and networking performance. If you do a custom VMware Tools installation or reinstallation, you can choose which drivers to install.</a></div>
+      <div class="Body"><a name="1_6_7_5_1">Which drivers are installed when you install VMware Tools also depends on the guest operating system and the VMware product. The following device drivers can be included with VMware Tools:</a></div>
+      <table class="Definition_List" summary="">
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_1_1">SVGA driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_1_2">This virtual driver enables 32-bit displays, high display resolution, and significantly faster graphics performance. When you install VMware Tools, a virtual SVGA driver replaces the default VGA driver, which allows for only 640 X 480 resolution and 16-color graphics.</a></div>
+            <div class="Body"><a name="1_6_7_5_2_1_2_2">On Windows guest operating systems whose operating system is Windows Vista or later, the VMware SVGA 3D (Microsoft - WDDM) driver is installed. This driver provides the same base functionality as the SVGA driver, and it adds Windows Aero support.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_2_1">SCSI driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_2_2">When you create a virtual machine, if you specify that you want the virtual machine to use a BusLogic adapter, the guest operating system uses the SCSI driver that VMware Tools provides. Some recent guest operating systems, however, contain LSI Logic Parallel or LSI Logic SAS drivers. For example, Windows Server 2008 defaults to LSI Logic SAS, which provides the best performance for that operating system. In this case, the LSI Logic SAS driver provided by the operating system is used.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_3_1">Paravirtual SCSI driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_3_2">This driver is for PVSCSI adapters, which enhance the performance of some virtualized applications.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_4_1">VMXNet NIC drivers</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_4_2">The </a><span class="filepath">vmxnet</span> and <span class="filepath">vmxnet3</span> networking drivers improve network performance. Which driver is used depends on how you configure device settings for the virtual machine. Search the VMware Knowledge Base for information on which guest operating systems support these drivers.</div>
+            <div class="Body"><a name="1_6_7_5_2_4_2_6">When you install VMware Tools, a VMXNet NIC driver replaces the default </a><span class="filepath">vlance</span> driver.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_5_1">Mouse driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_5_2">The virtual mouse driver improves mouse performance. This driver is required if you use some third-party tools such as Microsoft Terminal Services.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_6_1">Audio driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_6_2">This sound driver is required for all 64-bit Windows guest operating systems and 32-bit Windows Server 2003, Windows Server 2008, and Windows Vista guest operating systems if you use the virtual machine with VMware Server, Workstation, or Fusion.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_7_1">Kernel module for sharing folders</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_7_2">The host-guest file system module, called </a><span class="filepath">hgfs.sys</span> on Windows guest operating systems and <span class="filepath">vmhgfs</span> on Linux and Solaris, is required to use the virtual machine with Workstation or Fusion and share folders between hosts and guests.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_8_1">vShield Endpoint</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_8_2">If you use vSphere and vShield, you can now perform a custom VMware Tools installation to install the vShield Endpoint Thin Agent component. vShield Endpoint uses the hypervisor to perform antivirus scans without a bulky agent. This strategy avoids resource bottlenecks and optimizes memory use. For more information, see the </a><span class="cite">vShield Quick Start Guide</span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_9_1">ThinPrint driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_9_2">This driver enables the virtual printing feature on Microsoft Windows virtual machines. With virtual printing, printers added to the operating system on the client or host appear in the list of available printers in the guest operating system. No additional printer drivers must be installed in the virtual machine.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_10_1">Memory control driver</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_10_2">This driver is available and recommended if you use VMware vSphere. Excluding this driver hinders the memory management capabilities of the virtual machine in a vSphere deployment.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_11_1">Modules and drivers that support making automatic backups</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_11_2">If the guest operating system is Windows Vista, Windows Server 2003, or Windows Server 2008, a Volume Shadow Copy Services (VSS) module is installed. For other, older Windows operating systems, the Filesystem Sync driver is installed. These modules enable backup applications to create application-consistent snapshots. During the snapshotting process, certain processes are paused and virtual machine disks are quiesced.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Term"><a name="1_6_7_5_2_12_1">VMCI and VMCI Sockets drivers</a></div>
+          </td>
+          <td style="padding-left: 0px; padding-right: 10px; vertical-align: top;">
+            <div class="Definition_Description"><a name="1_6_7_5_2_12_2">The Virtual Machine Communication Interface driver allows fast and efficient communication between virtual machines. Developers can write client-server applications to the VMCI Sock (</a><span class="filepath">vsock</span>) interface to make use of the VMCI virtual device.</div>
+          </td>
+        </tr>
+      </table>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <hr />
+    <div class="copyright_info" style="font-family: sans-serif; font-size: 8pt; color:gray">
+      Help us improve this topic. Send feedback to <a href="#" onclick="WWHFrame.WWHControls.fClickedEmail()">docfeedback@vmware.com</a>. &nbsp;| &nbsp; <a href="http://www.vmware.com/support/" target="_blank">Technical Support</a> &nbsp;| &nbsp; Copyright © <span>2009-2011</span> VMware, Inc. All rights reserved. This product is protected by U.S. and international copyright and intellectual property laws. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents" target="_blank">http://www.vmware.com/go/patents</a>.
+      VMware is a registered trademark or trademark of VMware, Inc. in the United States and/or other jurisdictions. All other marks and names mentioned herein may be trademarks of their respective companies.
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

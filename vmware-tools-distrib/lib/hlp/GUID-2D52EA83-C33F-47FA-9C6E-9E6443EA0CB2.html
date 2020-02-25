@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- saved from url=(0014)about:internet -->
+    <meta name="keywords" content="VMware Tools,VMware Tools,scripts, VMware Tools,custom VMware Tools scripts,script command,custom scripts,VMware Tools scripts,custom" />
+    <title>Use Custom VMware Tools Scripts</title>
+    <link rel="StyleSheet" href="css/GUID-0FB09365-74C8-4874-8DCF-9F3719AB8796.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body class="" style="" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" summary="">
+      <tr>
+        <td style="text-align: left; font-family: sans-serif; font-size: 12px"></td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">VMware Tools Help : <a class="WebWorks_Breadcrumb_Link" href="GUID-A113A508-788B-4871-86A4-0D8C987FE4D9.html#1_8_8_1">VMware Tools Control Panel</a> : Use Custom VMware Tools Scripts</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="1_8_8_1">Use Custom VMware Tools Scripts</a></div>
+      <div class="Short_Description"><a name="1_8_8_3">You can use scripts to automate guest operating system operations when you change the power state of a virtual machine. You can also edit default scripts or associate custom scripts with power operations.</a></div>
+      <div class="Body"><a name="1_8_8_5_1">For example, when you power off a virtual machine, by default the </a><span class="filepath">poweroff-vm-default</span> script runs if the virtual machine is set to shut down the guest operating system rather than abruptly power off.</div>
+      <div class="Body"><a name="1_8_8_5_2">Scripts are run by the VMware Tools service, or daemon (</a><span class="filepath">vmtoolsd</span>). Because <span class="filepath">vmtoolsd</span> is run as root on Linux, Solaris, and FreeBSD and as System on Windows, the scripts are run in a separate session from the session of the logged-in user. The VMware Tools daemon does not detect desktop sessions, which means that it cannot display graphical applications. Do not attempt to use custom scripts to display graphical applications.</div>
+      <div class="important_Open">
+        <span style="font-family: Arial, Sans-serif; font-weight: bold;">   </span><a name="1_8_8_5_3o">Important</a></div>
+      <div class="important">   <a name="1_8_8_5_3">You cannot run scripts on Windows NT, Me, Windows 98, and Windows 95 guest operating systems.</a></div>
+      <div class="important_Close">   <a name="1_8_8_5_3c">&nbsp;</a></div>
+      <div class="Prerequisite_Open">
+        <span style="font-family: Arial, Sans-serif; font-weight: bold;">   </span><a name="1_8_8_6o">Prerequisites</a></div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_8_6_1_1">Familiarize yourself with the default VMware Tools scripts.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_8_6_1_2">On Linux, Solaris, and FreeBSD guest operating systems, to test, edit, or disable the running of a script, log in as root.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_8_6_1_3">On Linux, Solaris, and FreeBSD guest operating systems, to edit a script, make sure </a><span class="filepath">xterm</span> and <span class="filepath">vi</span> are installed in the guest operating system and are in your PATH, or specify which editor to use by setting the EDITOR environment variable.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Steps_Open"><a name="1_8_8_7o">Procedure</a></div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">1 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_8_7_1">Examine the contents of the default scripts to determine whether you want to create a custom script by making changes and saving the edited scripts in a new location.</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="Choice_1" summary="">
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: bottom; width: NaNpt;">
+            <div class="Choice_Table_Option_Head"><a name="1_8_8_7_1_4_1_1">Option</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: bottom; width: NaNpt;">
+            <div class="Choice_Table_Description_Head"><a name="1_8_8_7_1_4_1_2">Action</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Option"><a name="1_8_8_7_1_4_2_1">Windows</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Description"><a name="1_8_8_7_1_4_2_2">Edit scripts in </a><span class="filepath">Program Files\VMware\VMware Tools</span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Option"><a name="1_8_8_7_1_4_3_1">Linux Solaris, and FreeBSD</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Description"><a name="1_8_8_7_1_4_3_2">Edit scripts in </a><span class="filepath">/etc/vmware-tools</span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">2 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_8_7_2">Write new scripts or modify default scripts and save them with new names.</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="Choice_1" summary="">
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: bottom; width: NaNpt;">
+            <div class="Choice_Table_Option_Head"><a name="1_8_8_7_2_4_1_1">Option</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: bottom; width: NaNpt;">
+            <div class="Choice_Table_Description_Head"><a name="1_8_8_7_2_4_1_2">Action</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Option"><a name="1_8_8_7_2_4_2_1">Windows guests</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Description"><a name="1_8_8_7_2_4_2_2">If you write a new script, create the script as a batch file.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Option"><a name="1_8_8_7_2_4_3_1">Linux, Solaris, and FreeBSD guests</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Choice_Table_Description"><a name="1_8_8_7_2_4_3_2">Create the script in any executable format, such as a shell or Perl script.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="StepInfo_1"><a name="1_8_8_7_2_5">You can also use the </a><span class="uicontrol">Edit</span> button on the <span class="uicontrol">Scripts</span> tab.</div>
+      <div class="Body_1"><a name="1_8_8_7_2_5_7">If you edit a default script and do not change the name, the script is overwritten during the next VMware Tools update.</a></div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">3 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_8_7_3">Click the </a></span><span class="uicontrol">Scripts</span><span class="cmd"> tab in the VMware Tools control panel.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">4 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_8_7_4">In the </a></span><span class="uicontrol">ScriptEvent</span><span class="cmd"> list, select the power operation to associate with the script.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">5 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_8_7_5">Select the </a></span><span class="uicontrol">Use Script</span><span class="cmd"> check box, select </span><span class="uicontrol">Custom script</span><span class="cmd">, and click </span><span class="uicontrol">Browse</span><span class="cmd"> to locate the script.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">6 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_8_7_6">To test the script, click </a></span><span class="uicontrol">Run Now</span><span class="cmd">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="StepInfo_1"><a name="1_8_8_7_6_4">If you run a script and it executes successfully, the script might still fail later. Because the script is run as the logged-in user, the script might fail when run by the VMware Tools daemon during a power operation. This failure happens because the script might have a different working directory when it is run during a power operation, as a different logged-in user.</a></div>
+      <div class="Body"><a name="1_8_8_8_1">After you complete this procedure, the VMware Tools service runs the script whenever the specified power operation occurs.</a></div>
+      <div class="child_link_Open"><a name="1_8_8_9_1_1o">Subtopics</a></div>
+      <div class="child_link"><span class="Link_Text"><a href="javascript:WWHClickedPopup('vm_tools', 'GUID-A024460D-28A4-4541-B6BB-CFA1A31D9CE9.html#1_8_8_10_1', '');" title="Default VMware Tools Scripts" name="1_8_8_9_1_1">Default VMware Tools Scripts</a></span></div>
+      <div class="child_link"><span class="Link_Text"><a href="javascript:WWHClickedPopup('vm_tools', 'GUID-DE30092C-D613-4978-A68B-C0642B828909.html#1_8_8_11_1', '');" title="Disable a VMware Tools Script" name="1_8_8_9_1_2">Disable a VMware Tools Script</a></span></div>
+      <div class="Related_Reference_Open"><a name="1_8_8_9_3_1o">Related references</a></div>
+      <div class="Related_Reference"><span class="Link_Text"><a href="javascript:WWHClickedPopup('vm_tools', 'GUID-A024460D-28A4-4541-B6BB-CFA1A31D9CE9.html#1_8_8_10_1', '');" title="Default VMware Tools Scripts" name="1_8_8_9_3_1">Default VMware Tools Scripts</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <hr />
+    <div class="copyright_info" style="font-family: sans-serif; font-size: 8pt; color:gray">
+      Help us improve this topic. Send feedback to <a href="#" onclick="WWHFrame.WWHControls.fClickedEmail()">docfeedback@vmware.com</a>. &nbsp;| &nbsp; <a href="http://www.vmware.com/support/" target="_blank">Technical Support</a> &nbsp;| &nbsp; Copyright © <span>2009-2011</span> VMware, Inc. All rights reserved. This product is protected by U.S. and international copyright and intellectual property laws. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents" target="_blank">http://www.vmware.com/go/patents</a>.
+      VMware is a registered trademark or trademark of VMware, Inc. in the United States and/or other jurisdictions. All other marks and names mentioned herein may be trademarks of their respective companies.
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

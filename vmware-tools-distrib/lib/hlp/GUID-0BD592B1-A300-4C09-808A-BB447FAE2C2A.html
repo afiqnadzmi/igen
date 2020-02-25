@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- saved from url=(0014)about:internet -->
+    <meta name="keywords" content="VMware Tools,VMware Tools,vmtoolsd,service,VMware Tools,VMware Tools service" />
+    <title>VMware Tools Service</title>
+    <link rel="StyleSheet" href="css/GUID-0FB09365-74C8-4874-8DCF-9F3719AB8796.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body class="" style="" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" summary="">
+      <tr>
+        <td style="text-align: left; font-family: sans-serif; font-size: 12px"></td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">VMware Tools Help : <a class="WebWorks_Breadcrumb_Link" href="GUID-151025AE-6641-428B-9818-5E06916543F3.html#1_6_6_1">Components of VMware Tools</a> : VMware Tools Service</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="1_6_6_1">VMware Tools Service</a></div>
+      <div class="Short_Description"><a name="1_6_6_3">The VMware Tools service starts when the guest operating system boots. The service passes information between host and guest operating systems.</a></div>
+      <div class="Body"><a name="1_6_6_5_1">This program, which runs in the background, is called </a><span class="filepath">vmtoolsd.exe</span> in Windows guest operating systems, <span class="filepath">vmware-tools-daemon</span> in Mac OS X guest operating systems, and <span class="filepath">vmtoolsd</span> in Linux, FreeBSD, and Solaris guest operating systems. The VMware Tools service performs the following tasks:</div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_1">Passes messages from the host to the guest operating system, except in Mac OS X guest operating systems.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_2">Runs scripts that help automate guest operating system operations. The scripts run when the power state of the virtual machine changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_3">Synchronizes the time in the guest operating system with the time on the host, except in Mac OS X guest operating systems.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_4">In Windows guest operating systems, allows the pointer to move freely between the guest and the vSphere client or the Workstation, Fusion, or Player host operating system.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_5">In Windows and Mac OS X guest operating systems, fits the screen display resolution of the guest to the screen resolution of the vSphere client or the Workstation, Fusion, or Player host, if running in full screen mode. If running in windowed mode, fits the screen resolution of the guest to the size of the window on the client or host.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_6">In Windows guest operating systems, helps create the quiesced snapshots used by certain backup applications. This feature applies to vSphere and VMware Server.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_7">In Linux, Solaris, and FreeBSD guest operating systems, executes commands in the virtual machine when you shut down or restart the guest operating system.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_8">Is one of the processes that sends a heartbeat to the VMware product to indicate that the guest operating system is running. When the virtual machine runs under vSphere or VMware Server, a gauge for this heartbeat appears in the management interface.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_6_6_5_2_9">Provides support for guest operating system-bound calls created with the VMware VIX API, except in Mac OS X guest operating systems.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <hr />
+    <div class="copyright_info" style="font-family: sans-serif; font-size: 8pt; color:gray">
+      Help us improve this topic. Send feedback to <a href="#" onclick="WWHFrame.WWHControls.fClickedEmail()">docfeedback@vmware.com</a>. &nbsp;| &nbsp; <a href="http://www.vmware.com/support/" target="_blank">Technical Support</a> &nbsp;| &nbsp; Copyright © <span>2009-2011</span> VMware, Inc. All rights reserved. This product is protected by U.S. and international copyright and intellectual property laws. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents" target="_blank">http://www.vmware.com/go/patents</a>.
+      VMware is a registered trademark or trademark of VMware, Inc. in the United States and/or other jurisdictions. All other marks and names mentioned herein may be trademarks of their respective companies.
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

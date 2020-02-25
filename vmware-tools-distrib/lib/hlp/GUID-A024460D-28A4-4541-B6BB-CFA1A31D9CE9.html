@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- saved from url=(0014)about:internet -->
+    <meta name="keywords" content="VMware Tools,VMware Tools,scripts,VMware Tools,poweron-vm-default script,poweroff-vm-default script,resume-vm-default script,suspend-vm-default script,VMware Tools scripts,default" />
+    <title>Default VMware Tools Scripts</title>
+    <link rel="StyleSheet" href="css/GUID-0FB09365-74C8-4874-8DCF-9F3719AB8796.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body class="" style="" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" summary="">
+      <tr>
+        <td style="text-align: left; font-family: sans-serif; font-size: 12px"></td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">VMware Tools Help : <a class="WebWorks_Breadcrumb_Link" href="GUID-A113A508-788B-4871-86A4-0D8C987FE4D9.html#1_8_8_10_1">VMware Tools Control Panel</a> : <a class="WebWorks_Breadcrumb_Link" href="GUID-2D52EA83-C33F-47FA-9C6E-9E6443EA0CB2.html#1_8_8_10_1">Use Custom VMware Tools Scripts</a> : Default VMware Tools Scripts</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="1_8_8_10_1">Default VMware Tools Scripts</a></div>
+      <div class="Short_Description"><a name="1_8_8_10_3">One or more default scripts for each power state are included in VMware Tools.</a></div>
+      <div class="Body"><a name="1_8_8_10_5_1_1">What the default scripts do depends in part on the guest operating system:</a></div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_8_10_5_1_2_1">On most Microsoft Windows guest operating systems, the default script that runs when you suspend a virtual machine releases the IP address of the virtual machine. The default script that runs when you resume a virtual machine renews the IP address of the virtual machine. This behavior affects only virtual machines configured to use DHCP.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_1"><a name="1_8_8_10_5_1_2_1_4">In Windows guest operating systems, the default scripts are located in the </a><span class="filepath">Program Files\VMware\VMware Tools</span> folder.</div>
+      <div class="important_1_Open">
+        <span style="font-family: Arial, Sans-serif; font-weight: bold;">   </span><a name="1_8_8_10_5_1_2_1_5o">Important</a></div>
+      <div class="important_1">   <a name="1_8_8_10_5_1_2_1_5">You cannot run scripts on Windows NT, Me, Windows 98, and Windows 95 guest operating systems.</a></div>
+      <div class="important_1_Close">   <a name="1_8_8_10_5_1_2_1_5c">&nbsp;</a></div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_8_10_5_1_2_2">On most Linux, Solaris, and FreeBSD guest operating systems, the default script that runs when you suspend a virtual machine stops networking for the virtual machine. The default script that runs when you resume a virtual machine starts networking for the virtual machine. Scripts cannot be run on NetWare guest operating systems.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_1"><a name="1_8_8_10_5_1_2_2_4">On Linux, Solaris, and FreeBSD guest operating systems, the default scripts are located in the </a><span class="filepath">/etc/vmware-tools</span> directory.</div>
+      <table class="Default" summary="">
+        <caption>
+          <div class="Table_Title">Table  1. <a name="1_8_8_10_5_1_3_1">Default VMware Tools Scripts</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: bottom;">
+            <div class="Table_Cell_Head"><a name="1_8_8_10_5_1_3_2_3_1_1">Script Name</a></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: bottom;">
+            <div class="Table_Cell_Head"><a name="1_8_8_10_5_1_3_2_3_1_2">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><span class="filepath"><a name="1_8_8_10_5_1_3_2_4_1_1">poweroff-vm-default</a></span></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><a name="1_8_8_10_5_1_3_2_4_1_2">If you configured the power-off operation to shut down the guest operating system, this script runs when the virtual machine is being powered off.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_1_2_2">If you configured the reset operation to restart the guest operating system, this script runs when the virtual machine is being reset.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_1_2_3">This script has no effect on networking for the virtual machine.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><span class="filepath"><a name="1_8_8_10_5_1_3_2_4_2_1">poweron-vm-default</a></span></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><a name="1_8_8_10_5_1_3_2_4_2_2">If you configured the power-on operation to start the guest operating system, this script runs when the virtual machine is being powered on rather than resumed.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_2_2_2">If you configured the reset operation to restart the guest operating system, this script runs after virtual machine restarts.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_2_2_3">This script has no effect on networking for the virtual machine.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><span class="filepath"><a name="1_8_8_10_5_1_3_2_4_3_1">resume-vm-default</a></span></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><a name="1_8_8_10_5_1_3_2_4_3_2">If you configured the power-on operation to start the guest operating system or configured the reset operation to restart the guest, this script runs when the virtual machine is resumed after it was suspended.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_3_2_2">On Windows guest operating systems, if the virtual machine is configured to use DHCP, this script renews the IP address of the virtual machine.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_3_2_3">On Linux, Solaris, and FreeBSD guest operating systems, this script starts networking for the virtual machine.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><span class="filepath"><a name="1_8_8_10_5_1_3_2_4_4_1">suspend-vm-default</a></span></div>
+          </td>
+          <td style="border-bottom-color: Gainsboro; border-bottom-style: solid; border-bottom-width: thin; border-left-color: Gainsboro; border-left-style: solid; border-left-width: thin; border-right-color: Gainsboro; border-right-style: solid; border-right-width: thin; border-top-color: Gainsboro; border-top-style: solid; border-top-width: thin; padding-left: 8px; padding-right: 8px; vertical-align: top;">
+            <div class="Table_Cell"><a name="1_8_8_10_5_1_3_2_4_4_2">If you configured the suspend operation to suspend the guest operating system, this script runs when the virtual machine is being suspended.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_4_2_2">On Windows guest operating systems, if the virtual machine is configured to use DHCP, this script releases the IP address of the virtual machine.</a></div>
+            <div class="Body"><a name="1_8_8_10_5_1_3_2_4_4_2_3">On Linux, Solaris, and FreeBSD , this script stops networking for the virtual machine.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1_8_8_10_5_1_4">For information about how to configure various power operations, see the documentation for the specific VMware product you are using.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <hr />
+    <div class="copyright_info" style="font-family: sans-serif; font-size: 8pt; color:gray">
+      Help us improve this topic. Send feedback to <a href="#" onclick="WWHFrame.WWHControls.fClickedEmail()">docfeedback@vmware.com</a>. &nbsp;| &nbsp; <a href="http://www.vmware.com/support/" target="_blank">Technical Support</a> &nbsp;| &nbsp; Copyright © <span>2009-2011</span> VMware, Inc. All rights reserved. This product is protected by U.S. and international copyright and intellectual property laws. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents" target="_blank">http://www.vmware.com/go/patents</a>.
+      VMware is a registered trademark or trademark of VMware, Inc. in the United States and/or other jurisdictions. All other marks and names mentioned herein may be trademarks of their respective companies.
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

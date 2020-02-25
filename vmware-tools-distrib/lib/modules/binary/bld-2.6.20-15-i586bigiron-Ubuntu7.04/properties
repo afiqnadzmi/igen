@@ -1,0 +1,7 @@
+UtsRelease 2.6.20-15-server-bigiron
+UtsVersion #2 SMP Sun Apr 15 07:44:05 UTC 2007
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Ubuntu7.04, 2.6.20-15, i586, bigiron

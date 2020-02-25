@@ -1,0 +1,6 @@
+UtsRelease 2.6.18-4-486
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Debian4.0r0, 2.6.18-4-486, i686, 

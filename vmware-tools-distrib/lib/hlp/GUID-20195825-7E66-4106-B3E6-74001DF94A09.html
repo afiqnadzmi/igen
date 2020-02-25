@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- saved from url=(0014)about:internet -->
+    <meta name="keywords" content="VMware Tools,VMware Tools,disk command,virtual disks,shrinking,shrinking a virtual disk" />
+    <title>Shrink a Virtual Disk</title>
+    <link rel="StyleSheet" href="css/GUID-0FB09365-74C8-4874-8DCF-9F3719AB8796.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body class="" style="" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" summary="">
+      <tr>
+        <td style="text-align: left; font-family: sans-serif; font-size: 12px"></td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">VMware Tools Help : <a class="WebWorks_Breadcrumb_Link" href="GUID-A113A508-788B-4871-86A4-0D8C987FE4D9.html#1_8_9_1">VMware Tools Control Panel</a> : Shrink a Virtual Disk</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="1_8_9_1">Shrink a Virtual Disk</a></div>
+      <div class="Short_Description"><a name="1_8_9_3">Shrinking a virtual disk reclaims unused space in the virtual disk and reduces the amount of space the virtual disk occupies on the host.</a></div>
+      <div class="important_Open">
+        <span style="font-family: Arial, Sans-serif; font-weight: bold;">   </span><a name="1_8_9_5_1o">Important</a></div>
+      <div class="important">   <a name="1_8_9_5_1">Shrinking disks is not allowed under the following circumstances:</a></div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_1">The virtual machine is hosted on an ESX/ESXi host. ESX/ESXi can shrink the size of a virtual disk only when a virtual machine is exported. The space occupied by the virtual disk on the server, however, does not change.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_2">The virtual machine has a Mac OS X guest operating system.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_3">You preallocated all the disk space to the virtual disk when you created it.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_4">The virtual machine contains a snapshot.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_5">The virtual machine is a linked clone or the parent of a linked clone.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_6">The virtual disk is an independent disk in nonpersistent mode.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_5_1_2_7">The file system is a journaling file system, such as an </a><span class="filepath">ext4</span>, <span class="filepath">xfs</span>, or <span class="filepath">jfs</span> file system.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="important_Close">   <a name="1_8_9_5_1c">&nbsp;</a></div>
+      <div class="Body"><a name="1_8_9_5_2">Shrinking a disk is a two-step process. In the preparation step, VMware Tools reclaims all unused portions of disk partitions (such as deleted files) and prepares them for shrinking. This step takes place in the guest operating system. During this phase, you can still interact with the virtual machine.</a></div>
+      <div class="Body"><a name="1_8_9_5_3">In the shrink step, the VMware application reduces the size of the disk based on the disk space reclaimed during the preparation step. If the disk has empty space, this process reduces the amount of space the virtual disk occupies on the host drive. The shrink step takes place outside the virtual machine and takes considerable time, depending on the size of the disk. The virtual machine stops responding while VMware Tools shrinks the disks.</a></div>
+      <div class="important_Open">
+        <span style="font-family: Arial, Sans-serif; font-weight: bold;">   </span><a name="1_8_9_5_4o">Important</a></div>
+      <div class="important">   <a name="1_8_9_5_4">For your convenience, some newer versions of some VMware products include a </a><span class="uicontrol">Compact</span> button or menu command, which performs the same function as the <span class="uicontrol">Shrink</span> command. You can use the <span class="uicontrol">Compact</span> command when the virtual machine is powered off. The shrinking process is much quicker when you use the <span class="uicontrol">Compact</span> command.</div>
+      <div class="important_Close">   <a name="1_8_9_5_4c">&nbsp;</a></div>
+      <div class="Prerequisite_Open">
+        <span style="font-family: Arial, Sans-serif; font-weight: bold;">   </span><a name="1_8_9_6o">Prerequisites</a></div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_6_1_1">On Linux, Solaris, and FreeBSD guest operating systems, log in as root. If you shrink the virtual disk as a nonroot user, you cannot prepare to shrink the parts of the virtual disk that require root-level permissions.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_6_1_2">On Windows guests, log in as an administrator.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">■ </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="1_8_9_6_1_3">Verify that the host has free disk space equal to the size of the virtual disk that you plan to shrink.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Steps_Open"><a name="1_8_9_7o">Procedure</a></div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">1 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_9_7_1">Click the </a></span><span class="uicontrol">Shrink</span><span class="cmd"> tab in the VMware Tools control panel.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="StepInfo_1"><a name="1_8_9_7_1_4">If the disk cannot be shrunk, the tab shows a description of the reason.</a></div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">2 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_9_7_2">Select the partitions to shrink and click </a></span><span class="uicontrol">Prepare to Shrink</span><span class="cmd">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="StepInfo_1"><a name="1_8_9_7_2_4">If you deselect some partitions, the whole disk still shrinks. The deselected partitions, however, are not wiped for shrinking, and the shrink process does not reduce the size of the virtual disk as much as it would with all partitions selected.</a></div>
+      <div class="StepResult_1"><a name="1_8_9_7_2_5">VMware Tools reclaims all unused portions of disk partitions (such as deleted files) and prepares them for shrinking. During this phase, you can still interact with the virtual machine.</a></div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">3 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_9_7_3">When a prompt to shrink disks appears, click </a></span><span class="uicontrol">Yes</span><span class="cmd">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Step_1_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Step_1_inner" style="width: 18pt; white-space: nowrap;">4 </div>
+            </td>
+            <td width="100%">
+              <div class="Step_1_inner"><span class="cmd"><a name="1_8_9_7_4">When a message box appears that confirms the process is complete, click </a></span><span class="uicontrol">OK</span><span class="cmd">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <hr />
+    <div class="copyright_info" style="font-family: sans-serif; font-size: 8pt; color:gray">
+      Help us improve this topic. Send feedback to <a href="#" onclick="WWHFrame.WWHControls.fClickedEmail()">docfeedback@vmware.com</a>. &nbsp;| &nbsp; <a href="http://www.vmware.com/support/" target="_blank">Technical Support</a> &nbsp;| &nbsp; Copyright © <span>2009-2011</span> VMware, Inc. All rights reserved. This product is protected by U.S. and international copyright and intellectual property laws. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents" target="_blank">http://www.vmware.com/go/patents</a>.
+      VMware is a registered trademark or trademark of VMware, Inc. in the United States and/or other jurisdictions. All other marks and names mentioned herein may be trademarks of their respective companies.
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>
