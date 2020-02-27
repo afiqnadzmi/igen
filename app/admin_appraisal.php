@@ -1,6 +1,6 @@
 
 <?php
-/* Copyright (c) 2012 iGEN Technology (M) Sdn. Bhd.
+/* Copyright (c) 2012 iGEN Technology (M) Sdn. Bhd. afiq haha umi
 
   This Software Application is the copyrighted work of iGEN Technology (M) or its suppliers.
   iGEN Technology (M) grants a license agreement to iGEN Technology (M) Sdn Bhd for the use of this Software Application at their office premises.
