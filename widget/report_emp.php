@@ -38,6 +38,7 @@ include_once "app/loh.php";
                 padding-top: 5px;
                 padding-bottom: 5px;
                 padding-left: 10px;
+                font-family: Calibri;
             }
         </style>
     </head>
@@ -50,6 +51,7 @@ include_once "app/loh.php";
                 <th>Name</th>
                 <th>I.C.</th>
                 <th>Position</th>
+                <th>Department</th>
                 <th>Join Date</th>
                 <th>Status</th>
                 <th>Mobile</th>
@@ -64,8 +66,8 @@ include_once "app/loh.php";
                 $from = $_GET['from'];
                 $to = $_GET['to'];
 
-                $sql = "SELECT e.id AS eid, e.*, p.position_name FROM employee AS e 
-                        INNER JOIN position AS p ON e.position_id = p.id 
+                $sql = "SELECT e.id AS eid, e.*, p.position_name, d.dep_name FROM employee AS e 
+                        INNER JOIN position AS p ON e.position_id = p.id INNER JOIN department as d ON e.dep_id = d.id
                         WHERE e.join_date >= '" . $from . "' AND e.join_date <= '" . $to . "'";
                 if (!empty($_GET["emp_id"])) {
                     $sql.=" and e.id in(" . $_GET["emp_id"] . ")";
@@ -88,6 +90,7 @@ include_once "app/loh.php";
                               <td>" . $newArray['full_name'] . "</td>
                               <td>" . $newArray['ic'] . "</td>
                               <td>" . $newArray['position_name'] . "</td>
+                              <td>" . $newArray['dep_name'] . "</td>
                               <td>" . $newArray['join_date'] . "</td>
                               <td>" . $newArray['emp_status'] . "</td>
                               <td>" . $newArray['mobile'] . "</td>
@@ -102,8 +105,8 @@ include_once "app/loh.php";
                           </tr>";
                 }
             } else {
-                $sql = "SELECT e.*, e.id AS eid, p.position_name FROM employee AS e 
-                        INNER JOIN position AS p ON e.position_id = p.id";
+                $sql = "SELECT e.*, e.id AS eid, p.position_name, d.dep_name FROM employee AS e 
+                        INNER JOIN position AS p ON e.position_id = p.id INNER JOIN department as d ON e.dep_id = d.id";
 
 
                 if (!empty($_GET["emp_id"]) && $_GET["emp_id"] != "all") {
@@ -130,6 +133,7 @@ include_once "app/loh.php";
                              <td>" . $newArray['full_name'] . "</td>
                              <td>" . $newArray['ic'] . "</td>
                              <td>" . $newArray['position_name'] . "</td>
+                             <td>" . $newArray['dep_name'] . "</td>
                              <td>" . $newArray['join_date'] . "</td>
                              <td>" . $newArray['emp_status'] . "</td>
                              <td>" . $newArray['mobile'] . "</td>

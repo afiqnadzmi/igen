@@ -14,7 +14,7 @@ on the Internet or World Wide Web, or over any network, or local area network, w
 html,body {
    background-image:url("theme_c/BG_Main.png"); 
     background-repeat: repeat-x;
-   font-family:"Arial",sans-serif;
+     font-family:"Arial",sans-serif;
     font-size: 13px;
     height:100%; 
 	background: #eee;
@@ -87,7 +87,6 @@ html,body {
     color: black; 
 }
 .tabletr td{
- 
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -1953,6 +1952,12 @@ ul.sf-menu a:hover {
 }
 #ui-datepicker-div {
     display:none;
+}
+.tabletr td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    /*font-family: Calibri;*/
 }
 
 /*Copyright (c) 2012 iGEN Technology (M) Sdn. Bhd.
